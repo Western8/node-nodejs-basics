@@ -13,7 +13,7 @@ const create = async () => {
     } catch(err) {
     }
     if (fileExist) {
-        throw 'FS operation failed'
+        throw new Error('FS operation failed');
     };
     try {
         await fs.writeFile(path, 'I am fresh and young');

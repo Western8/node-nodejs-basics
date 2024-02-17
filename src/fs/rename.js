@@ -11,7 +11,7 @@ const rename = async () => {
     try {
         await fs.access(pathSrc);
     } catch(err) {
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     }
     let pathDstExist = false;
     try {
@@ -20,7 +20,7 @@ const rename = async () => {
     } catch(err) {
     }
     if (pathDstExist) {
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     };
     try {
         await fs.rename(pathSrc, pathDst)

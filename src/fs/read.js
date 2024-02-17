@@ -11,7 +11,7 @@ const read = async () => {
         console.log(cont.toString());
     } catch (err) {
         console.log(err);
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     }
 };
 

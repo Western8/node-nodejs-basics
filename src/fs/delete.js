@@ -10,7 +10,7 @@ const remove = async () => {
         await fs.rm(pathSrc);
     } catch(err) {
         console.log(err);        
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     }
 };
 

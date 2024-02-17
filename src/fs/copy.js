@@ -19,7 +19,7 @@ const copy = async () => {
     try {
         await fs.access(pathSrc);
     } catch(err) {
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     }
     let dirDstExist = false;
     try {
@@ -28,7 +28,7 @@ const copy = async () => {
     } catch(err) {
     }
     if (dirDstExist) {
-        throw 'FS operation failed';
+        throw new Error('FS operation failed');
     };
     await fs.mkdir(pathDst);
 
